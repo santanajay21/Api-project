@@ -1,0 +1,7 @@
+#! /user/bin/env ruby
+
+
+require_relative "../enviornment"
+
+Api.start
+

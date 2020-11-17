@@ -1,0 +1,8 @@
+#! /user/bin/env ruby
+
+
+require_relative "../enviornment"
+
+
+cli_instance = Cli.new 
+cli_instance.call
