@@ -9,17 +9,21 @@ class Api
         response = Net::HTTP.get(uri)
         hash = JSON.parse(response)
         #binding.pry
-        array_of_meals = hash["meals"]
-        array_of_meals.each do |meal|
-           Meals.new(meal["idMeal"],meal["strMeal"],meal["strCategory"],meal["strInstructions"])
-
-            #binding.pry
-
+        array_of_meals = hash["meals"] 
+        if array_of_meals == nil
+           false
+        else     
+            array_of_meals.each do |meal|
+                Meal.new(meal["idMeal"],meal["strMeal"],meal["strCategory"],meal["strInstructions"])
+            end 
+            true 
         end
-        #binding.pry
-
-       
+            #binding.pry
     end
+ 
+      
+    
+
 
 
 end
